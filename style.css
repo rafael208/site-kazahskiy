@@ -1,0 +1,193 @@
+
+/* --- Общие стили --- */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* --- Темная тема --- */
+body.dark {
+  background: #121212;
+  color: #e4e4e4;
+}
+body.dark header {
+  background: linear-gradient(135deg, #222, #111);
+}
+body.dark nav {
+  background: #000;
+}
+body.dark section {
+  background: #1e1e1e;
+  color: #e4e4e4;
+}
+body.dark footer {
+  background: #000;
+}
+
+/* --- Header --- */
+header {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  text-align: center;
+  padding: 3em 2em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: relative;
+}
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  letter-spacing: 2px;
+  animation: fadeInDown 1.2s ease;
+}
+
+/* --- Кнопка темы --- */
+.theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  padding: 8px 14px;
+  border: none;
+  background: white;
+  color: #333;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.theme-toggle:hover {
+  background: #ffd700;
+  transform: scale(1.05);
+}
+
+/* --- Навигация --- */
+nav {
+  background-color: #222;
+  padding: 1em;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+nav a {
+  color: white;
+  margin: 0 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.2s;
+}
+nav a:hover, nav a.active {
+  color: #ffd700;
+  transform: translateY(-2px);
+}
+
+/* --- Контейнер --- */
+.container {
+  max-width: 950px;
+  margin: 2em auto;
+  padding: 0 20px;
+}
+
+/* --- Секции --- */
+section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5em 2em;
+  margin-bottom: 2em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease-out;
+}
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+h1, h2 {
+  color: #007bff;
+}
+body.dark h1, body.dark h2 {
+  color: #66aaff;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+ul li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #ddd;
+}
+ul li:last-child {
+  border-bottom: none;
+}
+
+/* --- Прогресс бары --- */
+.progress-container {
+  margin-top: 1em;
+}
+.progress {
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+.progress-bar {
+  height: 18px;
+  text-align: center;
+  color: white;
+  font-size: 0.8em;
+  background: #007bff;
+  width: 0;
+  transition: width 1.2s ease;
+}
+
+/* --- Контакты --- */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f0f0f0;
+  padding: 1em;
+  border-radius: 12px;
+  margin-top: 1em;
+}
+.profile-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #007bff;
+}
+body.dark .profile-card {
+  background: #222;
+}
+
+/* --- Footer --- */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 1.2em;
+  margin-top: 2em;
+}
+
+/* --- Анимации --- */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
