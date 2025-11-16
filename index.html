@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="kk">
+<!-- Single Page Application Version of the site --><!DOCTYPE html><html lang="kk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Қазіргі заманғы бағдарламалау</title>
-  <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Қазіргі заманғы бағдарламалау — SPA</title>  <style>
     html {
       scroll-behavior: smooth;
     }
@@ -18,23 +16,144 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    /* --- Темная тема --- */
     body.dark {
       background: #121212;
       color: #e4e4e4;
     }
-    body.dark header {
-      background: linear-gradient(135deg, #222, #111);
+
+    header {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      color: white;
+      text-align: center;
+      padding: 3em 2em;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
     }
-    body.dark nav {
-      background: #000;
+
+    .theme-toggle {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      padding: 8px 14px;
+      border: none;
+      background: white;
+      color: #333;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
     }
-    body.dark section {
+    .theme-toggle:hover {
+      background: #ffd700;
+      transform: scale(1.05);
+    }
+
+    nav {
+      background-color: #222;
+      padding: 1em;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 1.5em;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 2em auto;
+      padding: 0 20px;
+    }
+
+    .page {
+      display: none;
+      background: white;
+      border-radius: 12px;
+      padding: 2em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+    body.dark .page {
       background: #1e1e1e;
       color: #e4e4e4;
     }
-    body.dark footer {
-      background: #000;
+    .page.active {
+      display: block;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1.2em;
+      margin-top: 3em;
+    }
+  </style></head>
+<body>
+  <header>
+    <h1>Қазіргі заманғы бағдарламалау — SPA</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+  </header>  <nav>
+    <a onclick="navigate('home')">Басты бет</a>
+    <a onclick="navigate('about')">Бағдарламалау туралы</a>
+    <a onclick="navigate('languages')">Тілдер</a>
+    <a onclick="navigate('trends')">Трендтер</a>
+    <a onclick="navigate('stats')">Статистика</a>
+    <a onclick="navigate('contact')">Байланыс</a>
+  </nav>  <div class="container">
+    <div id="home" class="page active">
+      <h2>Басты бет</h2>
+      <p>Бұл сайт заманауи бағдарламалау әлемін толық түсіндіретін интерактивті нұсқаулық.</p>
+    </div><div id="about" class="page">
+  <h2>Бағдарламалау туралы</h2>
+  <p>Бағдарламалау — компьютерге нақты әрекеттерді орындауды үйрететін үдеріс...</p>
+</div>
+
+<div id="languages" class="page">
+  <h2>Бағдарламалау тілдері</h2>
+  <p>Python, JavaScript, Java, C++, Swift — ең танымал тілдер.</p>
+</div>
+
+<div id="trends" class="page">
+  <h2>Қазіргі трендтер</h2>
+  <p>Жасанды интеллект, бұлтты технологиялар, Web3, киберқауіпсіздік.</p>
+</div>
+
+<div id="stats" class="page">
+  <h2>Статистика</h2>
+  <p>Python: 85%, JavaScript: 80%, Java: 70%...</p>
+</div>
+
+<div id="contact" class="page">
+  <h2>Байланыс</h2>
+  <p>Авторлар: Рафаэль мен Раха</p>
+</div>
+
+  </div>  <footer>
+    <p>&copy; 2025 Қазіргі заманғы бағдарламалау. Барлық құқықтар қорғалған.</p>
+  </footer>  <script>
+    function navigate(page) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(page).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+    }
+  </script></body>
+</html>      background: #000;
     }
 
     /* --- Header --- */
