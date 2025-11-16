@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Байланыс</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Байланыс</h1>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+</header>
+
+<nav>
+  <a href="index.html">Басты бет</a>
+  <a href="about.html">Бағдарламалау туралы</a>
+  <a href="languages.html">Тілдер</a>
+  <a href="trends.html">Трендтер</a>
+  <a href="stats.html">Статистика</a>
+  <a href="contact.html" class="active">Байланыс</a>
+</nav>
+
+<div class="container">
+  <section>
+    <h2>Авторы</h2>
+    <div class="profile-card">
+      <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="author">
+      <div>
+        <p><strong>Аты-жөні:</strong> Рафаэль мен Раха</p>
+        <p><strong>Желі:</strong> GitHub / LinkedIn</p>
+        <p>Сұрақтарыңыз болса, электрондық пошта арқылы хабарласыңыз: <a href="mailto:rafael@example.com">rafael@example.com</a></p>
+      </div>
+    </div>
+
+    <h2>Форма арқылы хабарласу</h2>
+    <p>
+      Егер сізде ұсыныстар немесе сұрақтар болса, төмендегі форманы толтырып хабарласа аласыз. 
+      Біз барлық хабарламаларды қарап, жауап беруге тырысамыз.
+    </p>
+
+    <form>
+      <label for="name">Аты-жөні:</label><br>
+      <input type="text" id="name" name="name" placeholder="Атыңыз"><br><br>
+
+      <label for="email">Электрондық пошта:</label><br>
+      <input type="email" id="email" name="email" placeholder="Email"><br><br>
+
+      <label for="message">Хабарлама:</label><br>
+      <textarea id="message" name="message" placeholder="Хабарламаңызды жазыңыз" rows="6"></textarea><br><br>
+
+      <button type="submit">Жіберу</button>
+    </form>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2025 Қазіргі заманғы бағдарламалау.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
