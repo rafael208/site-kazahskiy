@@ -1,395 +1,47 @@
-<!-- Single Page Application Version of the site --><!DOCTYPE html><html lang="kk">
+<!DOCTYPE html>
+<html lang="kk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Қазіргі заманғы бағдарламалау — SPA</title>  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9fafb;
-      color: #333;
-      line-height: 1.6;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.dark {
-      background: #121212;
-      color: #e4e4e4;
-    }
-
-    header {
-      background: linear-gradient(135deg, #007bff, #0056b3);
-      color: white;
-      text-align: center;
-      padding: 3em 2em;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      position: relative;
-    }
-
-    .theme-toggle {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      padding: 8px 14px;
-      border: none;
-      background: white;
-      color: #333;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .theme-toggle:hover {
-      background: #ffd700;
-      transform: scale(1.05);
-    }
-
-    nav {
-      background-color: #222;
-      padding: 1em;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      color: white;
-      margin: 0 1.5em;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #ffd700;
-    }
-
-    .container {
-      max-width: 950px;
-      margin: 2em auto;
-      padding: 0 20px;
-    }
-
-    .page {
-      display: none;
-      background: white;
-      border-radius: 12px;
-      padding: 2em;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: 0.3s;
-    }
-    body.dark .page {
-      background: #1e1e1e;
-      color: #e4e4e4;
-    }
-    .page.active {
-      display: block;
-    }
-
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 1.2em;
-      margin-top: 3em;
-    }
-  </style></head>
-<body>
-  <header>
-    <h1>Қазіргі заманғы бағдарламалау — SPA</h1>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
-  </header>  <nav>
-    <a onclick="navigate('home')">Басты бет</a>
-    <a onclick="navigate('about')">Бағдарламалау туралы</a>
-    <a onclick="navigate('languages')">Тілдер</a>
-    <a onclick="navigate('trends')">Трендтер</a>
-    <a onclick="navigate('stats')">Статистика</a>
-    <a onclick="navigate('contact')">Байланыс</a>
-  </nav>  <div class="container">
-    <div id="home" class="page active">
-      <h2>Басты бет</h2>
-      <p>Бұл сайт заманауи бағдарламалау әлемін толық түсіндіретін интерактивті нұсқаулық.</p>
-    </div><div id="about" class="page">
-  <h2>Бағдарламалау туралы</h2>
-  <p>Бағдарламалау — компьютерге нақты әрекеттерді орындауды үйрететін үдеріс...</p>
-</div>
-
-<div id="languages" class="page">
-  <h2>Бағдарламалау тілдері</h2>
-  <p>Python, JavaScript, Java, C++, Swift — ең танымал тілдер.</p>
-</div>
-
-<div id="trends" class="page">
-  <h2>Қазіргі трендтер</h2>
-  <p>Жасанды интеллект, бұлтты технологиялар, Web3, киберқауіпсіздік.</p>
-</div>
-
-<div id="stats" class="page">
-  <h2>Статистика</h2>
-  <p>Python: 85%, JavaScript: 80%, Java: 70%...</p>
-</div>
-
-<div id="contact" class="page">
-  <h2>Байланыс</h2>
-  <p>Авторлар: Рафаэль мен Раха</p>
-</div>
-
-  </div>  <footer>
-    <p>&copy; 2025 Қазіргі заманғы бағдарламалау. Барлық құқықтар қорғалған.</p>
-  </footer>  <script>
-    function navigate(page) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(page).classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-      const btn = document.querySelector('.theme-toggle');
-      btn.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
-    }
-  </script></body>
-</html>      background: #000;
-    }
-
-    /* --- Header --- */
-    header {
-      background: linear-gradient(135deg, #007bff, #0056b3);
-      color: white;
-      text-align: center;
-      padding: 3em 2em;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      position: relative;
-    }
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-      letter-spacing: 2px;
-      animation: fadeInDown 1.2s ease;
-    }
-
-    /* --- Тема кнопка --- */
-    .theme-toggle {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      padding: 8px 14px;
-      border: none;
-      background: white;
-      color: #333;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .theme-toggle:hover {
-      background: #ffd700;
-      transform: scale(1.05);
-    }
-
-    /* --- Навигация --- */
-    nav {
-      background-color: #222;
-      padding: 1em;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    nav a {
-      color: white;
-      margin: 0 1.5em;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s, transform 0.2s;
-    }
-    nav a:hover {
-      color: #ffd700;
-      transform: translateY(-2px);
-    }
-
-    /* --- Контейнер --- */
-    .container {
-      max-width: 950px;
-      margin: 2em auto;
-      padding: 0 20px;
-    }
-
-    /* --- Секции --- */
-    section {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5em 2em;
-      margin-bottom: 2em;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.6s ease-out;
-    }
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-    }
-
-    h1, h2 {
-      color: #007bff;
-    }
-    body.dark h1, 
-    body.dark h2 {
-      color: #66aaff;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    ul li {
-      padding: 8px 0;
-      border-bottom: 1px dashed #ddd;
-    }
-    ul li:last-child {
-      border-bottom: none;
-    }
-
-    /* --- Прогресс бары --- */
-    .progress-container {
-      margin-top: 1em;
-    }
-    .progress {
-      background: #ddd;
-      border-radius: 20px;
-      overflow: hidden;
-      margin: 8px 0;
-    }
-    .progress-bar {
-      height: 18px;
-      text-align: center;
-      color: white;
-      font-size: 0.8em;
-      background: #007bff;
-      width: 0;
-      transition: width 1.2s ease;
-    }
-
-    /* --- Контакты --- */
-    .profile-card {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      background: #f0f0f0;
-      padding: 1em;
-      border-radius: 12px;
-      margin-top: 1em;
-    }
-    .profile-card img {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #007bff;
-    }
-    body.dark .profile-card {
-      background: #222;
-    }
-
-    /* --- Footer --- */
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 1.2em;
-      margin-top: 2em;
-    }
-
-    /* --- Анимации --- */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Қазіргі заманғы бағдарламалау</title>
+  <link rel="stylesheet" href="/kaz_programming_site/css/style.css">
 </head>
 <body>
   <header>
     <h1>Қазіргі заманғы бағдарламалау</h1>
     <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
   </header>
+
   <nav>
-    <a href="#home">Басты бет</a>
-    <a href="#about">Бағдарламалау туралы</a>
-    <a href="#languages">Тілдер</a>
-    <a href="#trends">Трендтер</a>
-    <a href="#stats">Статистика</a>
-    <a href="#contact">Байланыс</a>
+    <a href="/kaz_programming_site/index.html" class="active">Басты бет</a>
+    <a href="/kaz_programming_site/about.html">Бағдарламалау туралы</a>
+    <a href="/kaz_programming_site/languages.html">Тілдер</a>
+    <a href="/kaz_programming_site/trends.html">Трендтер</a>
+    <a href="/kaz_programming_site/stats.html">Статистика</a>
+    <a href="/kaz_programming_site/contact.html">Байланыс</a>
   </nav>
 
   <div class="container">
     <section id="home">
       <h2>Қош келдіңіз!</h2>
-      <p>Бұл сайт қазіргі заманғы бағдарламалаудың негіздері мен трендтеріне арналған.</p>
+      <p>Бұл сайт қазіргі заманғы бағдарламалаудың негіздері мен трендтеріне арналған. Мұнда сіз бағдарламалау тілдерін, олардың танымалдылығын, трендтерді және IT индустриясының соңғы жаңалықтарын таба аласыз.</p>
+      <p>Сайтта әр бөлімге терең ақпарат берілген, соның ішінде мысал кодтар, технологиялық түсініктемелер, статистика және практикалық кеңестер бар.</p>
     </section>
 
-    <section id="about">
-      <h2>Бағдарламалау туралы</h2>
-      <p>Бағдарламалау – тиімді, масштабталатын және қолданушыға ыңғайлы шешімдерді жасауға арналған процесс.</p>
+    <section id="intro">
+      <h2>Біздің миссиямыз</h2>
+      <p>Мақсатымыз — қазақ тілді оқушылар мен жас мамандарға заманауи IT саласын түсінікті, толық және қолжетімді түрде көрсету. Бағдарламалау дағдыларын дамыту үшін практикалық мысалдар мен теорияны біріктіреміз.</p>
     </section>
 
-    <section id="languages">
-      <h2>Танымал бағдарламалау тілдері</h2>
+    <section id="features">
+      <h2>Сайттың ерекшеліктері</h2>
       <ul>
-        <li><strong>Python</strong> – деректер анализі, AI, веб.</li>
-        <li><strong>JavaScript</strong> – веб-интерфейстер, Node.js.</li>
-        <li><strong>Java</strong> – Android және enterprise.</li>
-        <li><strong>C++</strong> – ойындар, жүйелік бағдарламалау.</li>
-        <li><strong>Swift</strong> – iOS және macOS.</li>
+        <li>Қазақ тілінде толық ақпарат</li>
+        <li>Актуалды трендтер мен технологиялар</li>
+        <li>Бағдарламалау тілдерінің салыстырмалы статистикасы</li>
+        <li>Пайдалы сілтемелер мен GitHub ресурстары</li>
+        <li>Пайдаланушыға ыңғайлы интерфейс және Dark/Light режим</li>
       </ul>
-    </section>
-
-    <section id="trends">
-      <h2>Қазіргі трендтер</h2>
-      <ul>
-        <li>Жасанды интеллект және ML</li>
-        <li>Cloud computing</li>
-        <li>Web3 және blockchain</li>
-        <li>Cybersecurity</li>
-        <li>Low-code/No-code платформалар</li>
-      </ul>
-    </section>
-
-    <section id="stats">
-      <h2>Бағдарламалау тілдерінің танымалдығы</h2>
-      <div class="progress-container">
-        <p>Python</p>
-        <div class="progress"><div class="progress-bar" style="width: 85%;">85%</div></div>
-        <p>JavaScript</p>
-        <div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div>
-        <p>Java</p>
-        <div class="progress"><div class="progress-bar" style="width: 70%;">70%</div></div>
-        <p>C++</p>
-        <div class="progress"><div class="progress-bar" style="width: 65%;">65%</div></div>
-        <p>Swift</p>
-        <div class="progress"><div class="progress-bar" style="width: 50%;">50%</div></div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Байланыс</h2>
-      <div class="profile-card">
-        <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="author">
-        <div>
-          <p><strong>Авторы:</strong> Рафаэль мен Раха</p>
-          <p>Желі: GitHub</p>
-        </div>
-      </div>
     </section>
   </div>
 
@@ -397,29 +49,6 @@
     <p>&copy; 2025 Қазіргі заманғы бағдарламалау. Барлық құқықтар қорғалған.</p>
   </footer>
 
-  <script>
-    // --- Темная тема ---
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-      const btn = document.querySelector('.theme-toggle');
-      if (document.body.classList.contains('dark')) {
-        btn.textContent = "☀️ Light";
-      } else {
-        btn.textContent = "🌙 Dark";
-      }
-    }
-
-    // --- Анимация появления секций ---
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.2 });
-
-    sections.forEach(sec => observer.observe(sec));
-  </script>
+  <script src="/kaz_programming_site/js/script.js"></script>
 </body>
 </html>
